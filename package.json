@@ -1,0 +1,22 @@
+{
+  "name": "yuki-code-theme",
+  "displayName": "yuki-code-theme",
+  "description": "自用主题",
+  "icon": "icon.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "yuki-code",
+        "uiTheme": "vs-dark",
+        "path": "./themes/yuki-code-color-theme.json"
+      }
+    ]
+  }
+}
