@@ -2,8 +2,10 @@
   "name": "yuki-code-theme",
   "displayName": "yuki-code-theme",
   "description": "自用主题",
+  "publisher":"MinakamiYuki",
   "icon": "icon.png",
   "version": "0.0.1",
+  "repository":"https://github.com/zhysky/yuki-code-theme",
   "engines": {
     "vscode": "^1.76.0"
   },
