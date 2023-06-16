@@ -132,10 +132,17 @@
     "titleBar.border": "#ffffff15",
     "titleBar.inactiveBackground": "#1f1f1f",
     "titleBar.inactiveForeground": "#8b949e",
-    "welcomePage.tileBackground": "#ffffff0f",
+		"welcomePage.tileBackground": "#ffffff00",
     "welcomePage.progress.foreground": "#0078d4",
     "widgetBorder": "#ffffff15"
   },
+	"semanticHighlighting": true,
+	"semanticTokenColors": {
+		"newOperator": "#0000ff",
+		"stringLiteral": "#a31515",
+		"customLiteral": "#000000",
+		"numberLiteral": "#098658",
+	},
 	"tokenColors": [
 		{
 			"name": "Comment",
@@ -152,6 +159,16 @@
 			"name": "Variables",
 			"scope": [
 				"variable",
+				"variable.other", //其它变量，如 $some_variables。
+				"variable.other.readwrite", //let、var声明的变量的颜色
+				"punctuation.definition.variable", //the $ in PHP and Shell.
+				"variable.other.constant", //const声明的不可变变量的颜色
+				"variable.language", //语言保留变量，如 this、super、self 等。this、super等
+				"variable.parameter", //函数参数
+				"variable.other.member", //类或其他数据结构的字段，属性，成员
+				"variable.function", //函数和方法名称的作用域，但仅限于调用时	
+				"variable.annotation", //作为数值一部分的标识符中的最终标签
+				"punctuation.definition.annotation",
 				"string constant.other.placeholder"
 			],
 			"settings": {
@@ -254,7 +271,26 @@
 		{
 			"name": "Number, Constant, Function Argument, Tag Attribute, Embedded",
 			"scope": [
-				"constant.numeric",
+				"constant.numeric.integer",
+				"constant.numeric.integer.binary",
+				"constant.numeric.integer.octal",
+				"constant.numeric.integer.decimal",
+				"constant.numeric.integer.hexadecimal",
+				"constant.numeric.integer.other",
+				"constant.numeric.float",
+				"constant.numeric.float.binary",
+				"constant.numeric.float.octal",
+				"constant.numeric.float.decimal",
+				"constant.numeric.float.hexadecimal",
+				"constant.numeric.float.other",
+				"constant.numeric.complex",
+				"constant.numeric.complex.real",
+				"constant.numeric.complex.imaginary",
+				"constant.languag", //true/false/null
+				"constant.character.escape", //转义字符如\n和\x20    //匹配字符，e.g. &lt;, \e, \031.
+				"constant.other.placeholder", //格式化占位符 %s
+				"constant.other",
+				"constant.numeric", //数字   e.g. 42, 1.3f, 0x4AB1U.
 				"constant.language",
 				"support.constant",
 				"constant.character",
@@ -265,21 +301,6 @@
 			],
 			"settings": {
 				"foreground": "#dbe274cb"
-			}
-		},
-		{
-			"name": "String, Symbols, Inherited Class, Markup Heading",
-			"scope": [
-				"string",
-				"constant.other.symbol",
-				"constant.other.key",
-				"entity.other.inherited-class",
-				"markup.heading",
-				"markup.inserted.git_gutter",
-				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
-			],
-			"settings": {
-				"foreground": "#97e91b"
 			}
 		},
 		{
@@ -559,6 +580,44 @@
 			}
 		},
 		{
+			"name": "String, Symbols, Inherited Class, Markup Heading",
+			"scope": [
+				"string",
+				"constant.other.symbol",
+				"constant.other.key",
+				"entity.other.inherited-class",
+				"markup.heading",
+				"markup.inserted.git_gutter",
+				"meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
+			],
+			"settings": {
+				"foreground": "#33d436"
+			}
+		},
+		{
+			"name": "String2",
+			"scope": [
+				"string.quoted", //带引号的字符串
+				"string.quoted.single", //单引号字符串，如 'foo'。
+				"string.quoted.double", //双引号字符串，如 "foo"。
+				"string.quoted.triple", //三引号字符串，如 """Python"""。
+				"string.quoted.other", // 其它字符串，如 $'shell'、%s{...}。
+				"meta.string",
+				"punctuation.definition.string.begin",
+				"punctuation.definition.string.end",
+				"string.quoted.unquoted", //如未加引号 here-docs 和 here-strings。
+				"string.quoted.regexp", //正则表达式。
+				"meta.interpolated", //需要被计算的字符串，如 反引号date反引号、$(pwd)。
+				"punctuation.section.interpolation.begin",
+				"punctuation.section.interpolation.end",
+				"source.language-suffix.embedded",
+			],
+			"settings": {
+				"foreground": "#56bf0b", //字符串
+				"fontStyle": "",
+			}
+		},
+		{
 			"name": "Markdown - Plain",
 			"scope": [
 				"text.html.markdown",
@@ -756,3 +815,4 @@
 		}
 	]
 }
+//https://www.freesion.com/article/81561414529/
